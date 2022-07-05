@@ -7,6 +7,7 @@ import LightButton from '../../../components/light-button/LightButton';
 import Link from 'next/link';
 import SectionTitle from '../../../components/texting/SectionTitle';
 import Back from '../../../components/back/Back';
+import { exhibitionsPath } from '../../../lib/api';
 
 const Exhibitions: NextPage<{exhibitions: IExhibition[]}> = ({exhibitions}) => {
   return (
@@ -41,7 +42,7 @@ export async function getServerSideProps(context: any) {
       headers: {
           'Content-Type': 'application/json'
       },
-      url: `http://localhost:3000/api/exhibitions`
+      url: exhibitionsPath
   });
 
   return {

@@ -17,6 +17,7 @@ import Link from 'next/link';
 import LightButton from '../../components/light-button/LightButton';
 import Head from 'next/head';
 import { Intro } from '../../components/intro/Intro';
+import { lastExhibitionPath, servicesPath } from '../../lib/api';
 //import 'swiper/css/navigation';
 
 const About: NextPage<{services: IService[], exhibition: IExhibition}> = ({services, exhibition}) => {
@@ -110,14 +111,14 @@ export async function getServerSideProps(context: any) {
         headers: {
             'Content-Type': 'application/json'
         },
-        url: `http://localhost:3000/api/services`
+        url: servicesPath
     });
     const exhibition = await axios({
         method: 'GET',
         headers: {
             'Content-Type': 'application/json'
         },
-        url: `http://localhost:3000/api/last-exhibition`
+        url: lastExhibitionPath
     });
 
   return {

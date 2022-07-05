@@ -4,6 +4,7 @@ import Section from '../../../components/section/Section'
 import { IAbout } from '../../../interfaces/about';
 import AboutItem from '../../../components/about-item/AboutItem';
 import Back from '../../../components/back/Back';
+import { aboutItemsPath } from '../../../lib/api';
 
 const AboutInfo: NextPage<{aboutItems: IAbout[]}> = ({aboutItems}) => {
   return (
@@ -23,7 +24,7 @@ export async function getServerSideProps(context: any) {
       headers: {
           'Content-Type': 'application/json'
       },
-      url: `http://localhost:3000/api/about-items`
+      url: aboutItemsPath
   });
 
   return {

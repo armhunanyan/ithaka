@@ -11,6 +11,7 @@ import { IService, ServiceOrientation } from '../../interfaces/service';
 import { useState } from 'react';
 import Head from 'next/head';
 import { Intro } from '../../components/intro/Intro';
+import { servicesPath } from '../../lib/api';
 
 const Services: NextPage<{services: IService[]}> = ({services}) => {
     let verticalCount = services.length - services.length % 4;
@@ -71,7 +72,7 @@ export async function getServerSideProps(context: any) {
         headers: {
             'Content-Type': 'application/json'
         },
-        url: `http://localhost:3000/api/services`
+        url: servicesPath
     });
 
     return {

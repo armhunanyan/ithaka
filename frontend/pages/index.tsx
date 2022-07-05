@@ -12,6 +12,7 @@ import axios from 'axios';
 import { IService } from '../interfaces/service';
 import Head from 'next/head';
 import { Intro } from '../components/intro/Intro';
+import { servicesPath } from '../lib/api';
 //import 'swiper/css/navigation';
 
 const Home: NextPage<{services: IService[]}> = ({services}) => {
@@ -86,7 +87,7 @@ export async function getServerSideProps(context: any) {
       headers: {
           'Content-Type': 'application/json'
       },
-      url: `http://localhost:3000/api/services`
+      url: servicesPath
   });
 
   return {

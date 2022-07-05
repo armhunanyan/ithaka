@@ -1,5 +1,6 @@
 import axios from 'axios';
 import SingleNews from '../../components/single-news/SingleNews';
+import { eventByIdPath, newsPath } from '../../lib/api';
 
 export async function getServerSideProps(context: any) {
     const event = await axios({
@@ -7,14 +8,14 @@ export async function getServerSideProps(context: any) {
         headers: {
             'Content-Type': 'application/json'
         },
-        url: `http://localhost:3000/api/events/${context.query.id}`
+        url: eventByIdPath(context.query.id)
     });
     const recentNews = await axios({
         method: 'GET',
         headers: {
             'Content-Type': 'application/json'
         },
-        url: `http://localhost:3000/api/news`
+        url: newsPath
     });
 
     return {

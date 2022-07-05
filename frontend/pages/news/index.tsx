@@ -11,6 +11,7 @@ import { truncate } from '../../lib/utils';
 import Head from 'next/head';
 import { Intro } from '../../components/intro/Intro';
 import Link from 'next/link';
+import { eventsPath, newsPath } from '../../lib/api';
 
 const News: NextPage<{news: INews[], events: IEvent[]}> = ({news, events}) => {
     return (
@@ -78,7 +79,7 @@ export async function getServerSideProps(context: any) {
         headers: {
             'Content-Type': 'application/json'
         },
-        url: `http://localhost:3000/api/news`
+        url: newsPath
     });
 
     const events = await axios({
@@ -86,7 +87,7 @@ export async function getServerSideProps(context: any) {
         headers: {
             'Content-Type': 'application/json'
         },
-        url: `http://localhost:3000/api/news`
+        url: eventsPath
     });
 
     return {
