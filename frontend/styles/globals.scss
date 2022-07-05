@@ -8,6 +8,20 @@
 body{
     font-family: 'Montserrat', sans-serif;
 }
+.nav-active{
+    &::before{
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -8px;
+        margin: 0 auto;
+        width: 5px;
+        height: 5px;
+        border-radius: 9999px;
+        background-color: black;
+    }
+}
 
 .swiper-button-prev {
     background-image: url("/images/icons/arrow-left.svg");

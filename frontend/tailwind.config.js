@@ -58,7 +58,14 @@ module.exports = {
       'arrow-right': 'url("/images/icons/arrow-right.svg")',
       'contacts': 'url("/images/contacts.png")',
     },
-    extend: {},
+    extend: {
+      gridTemplateColumns: {
+        '25': 'repeat(25, minmax(0, 1fr))',
+      },
+      gridColumn: {
+        'span-13': 'span 13 / span 13',
+      }
+    },
   },
   plugins: [
     require('@tailwindcss/aspect-ratio'),

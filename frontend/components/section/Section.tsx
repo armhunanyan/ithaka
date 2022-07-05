@@ -5,7 +5,7 @@ interface ISectionProps {
     titleLine?: boolean;
     background?: string;
     className?: string;
-    children: JSX.Element | JSX.Element[]
+    children: any
 }
 
 const Section:React.FC<ISectionProps> = ({title, background = '', className = '', titleLine, children}) => {

@@ -34,7 +34,7 @@ const Contacts:React.FC = () => {
                     </div>
                 </div>
                 <div>
-                    <div className="px-40 py-100 md:py-0">
+                    <div className="py-100 md:px-40 md:py-0">
                         <p className="text-lg mb-20 font-medium">Studio in yerevan</p>
                         <p className="font-light mb-10">0070, Yerevan, Aygestan 5th street, 6 “ITHAKE666” LLC</p>
                         <p className="font-light mb-15">Phone: + 374 77 71 19 33</p>

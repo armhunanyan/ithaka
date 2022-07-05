@@ -14,7 +14,7 @@ const Client:React.FC<IClientProps> = ({title, image}) => {
     return (
         <div className="text-center">
             <div className='aspect-w-3 aspect-h-2 mb-20 '>
-                <img className="mx-auto object-scale-down object-center " src={image}></img>
+                <img className="mx-auto object-scale-down object-center" src={image}></img>
             </div>
             <p className="text-base md:text-md font-medium">{title}</p>
         </div>

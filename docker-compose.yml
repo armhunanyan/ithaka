@@ -1,0 +1,10 @@
+version: '1.0'
+services:
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: frontend
+    ports:
+      - 3005:3001
+
