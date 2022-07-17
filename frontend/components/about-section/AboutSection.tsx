@@ -1,11 +1,22 @@
 import Section from "../section/Section";
 import ReadMore from "../read-more/ReadMore";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { InitialDataContext } from "../../contexts/initial-data/InitialDataContext";
 import { useRouter } from "next/router";
+import { aboutItemsPath } from "../../lib/api";
+import axios from "axios";
 
 const AboutSection:React.FC = () => {
-    const {aboutInfo} = useContext(InitialDataContext);
+    const {aboutInfo, setAboutInfo} = useContext(InitialDataContext);
+    useEffect(() => {
+        if (!aboutInfo) {
+            axios.get(aboutItemsPath)
+            .then(res => {
+                setAboutInfo(res.data[0]);
+            })
+        }
+    }, [])
+    
     const Router = useRouter();
     return (
         aboutInfo ? (

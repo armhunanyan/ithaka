@@ -11,7 +11,7 @@ const NewsItem:React.FC<{news: INews}> = ({news}) => {
             </div>
             <div>
                 <p className="text-base md:text-lg font-medium my-10 md:my-25">{news.title}</p>
-                <p>{truncate(news.description, 100)}</p>
+                <p>{truncate(news.content, 100)}</p>
                 <div className="mt-10 md:mt-25">
                     <ReadMore href={`/news/${news.id}`}/>
                 </div>

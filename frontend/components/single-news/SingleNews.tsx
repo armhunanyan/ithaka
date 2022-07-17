@@ -24,7 +24,7 @@ const SingleNews: NextPage<{news: INews; recentNews: INews[]}> = ({news, recentN
                         </div>
                     </div>
                     <div>
-                        <p className='font-light mt-20'>{news.description}</p>
+                        <p className='font-light mt-20'>{news.content}</p>
                     </div>
                 </Section>
             )}

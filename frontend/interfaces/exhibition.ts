@@ -3,5 +3,5 @@ export interface IExhibition {
     title: string;
     companyName: string,
     image: string;
-    description: string;
+    content: string;
 }

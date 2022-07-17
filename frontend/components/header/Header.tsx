@@ -39,7 +39,7 @@ const Header = () => {
                                     <MenuItem href="/" name="Home" />
                                     <MenuItem href="/services" name="Services" exact={false} />
                                     <MenuItem href="/about" name="About" exact={false} />
-                                    <MenuItem href="/projects" name="Projects" />
+                                    <MenuItem href="/projects" name="Projects" exact={false} />
                                     <MenuItem href="/news" name="Blog & News" exact={false} />
                                     <MenuItem href="/contact" name="Contact" />
                                 </ul>

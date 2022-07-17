@@ -22,7 +22,7 @@ const Exhibition:React.FC<{exhibition: IExhibition}> = ({exhibition}) => {
             </div>
             <div className="md:col-span-2">
                 <p className="text-base md:text-lg font-medium mb-10 md:mb-20">{exhibition.title}</p>
-                <p>{show ? exhibition.description : truncate(exhibition.description, 200) }</p>
+                <p>{show ? exhibition.content : truncate(exhibition.content, 200) }</p>
                 <div className="mt-10 md:mt-20">
                     {show ? <Close onClick={onClose}/> : <ReadMore onClick={onReadMore}/>}
                 </div>

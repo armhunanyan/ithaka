@@ -1,17 +1,15 @@
+import { INews } from './../../interfaces/news';
+import { IAbout } from './../../interfaces/about';
+import { IClient } from './../../interfaces/client';
 import React from 'react';
-import { IClientProps } from './../../components/clients/Clients';
 
 interface IInitialDataContext {
-    aboutInfo?: {
-        image: string;
-        title: string;
-        content: string;
-    };
-    recentNews?: {
-        title: string;
-        content: string;
-    }[],
-    clients?: IClientProps[]
+    aboutInfo?: IAbout | null;
+    setAboutInfo?: any;
+    recentNews?: INews[] | null,
+    setRecentNews?: any;
+    clients?: IClient[] | null,
+    setClients?: any;
 }
 
 export const InitialDataContext: React.Context<IInitialDataContext> = React.createContext({});

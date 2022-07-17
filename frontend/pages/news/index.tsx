@@ -25,7 +25,7 @@ const News: NextPage<{news: INews[], events: IEvent[]}> = ({news, events}) => {
                         <>
                             <span className='inline-block bg-green-light px-30 py-5 text-white text-center md:text-md font-medium mb-10'>New</span>
                             <p className='text-xl md:text-3xl font-bold'>{news[0].title}</p>
-                            <p className='font-light mt-20'>{truncate(news[0].description, 120)}</p>
+                            <p className='font-light mt-20'>{truncate(news[0].content, 120)}</p>
                             <div className="mt-10 md:mt-20">
                                 <ReadMore href={`/news/${news[0].id}`} />
                             </div>
@@ -53,7 +53,7 @@ const News: NextPage<{news: INews[], events: IEvent[]}> = ({news, events}) => {
                                         <img className='object-cover object-center' src={events[0].image} />
                                     </div>
                                     <p className='text-base md:text-lg font-medium mt-10 mb-10 md:mt-25 md:mb-15'>{events[0].title}</p>
-                                    <p>{truncate(events[0].description, 100)}</p>
+                                    <p>{truncate(events[0].content, 100)}</p>
                                 </div>
                             </a>
                         </Link>

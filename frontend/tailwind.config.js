@@ -7,11 +7,12 @@ module.exports = {
   theme: {
     container: {
       center: true,
+      padding:"10px",
       screens: {
         sm: "100%",
         // md: "968px",
         // lg: "1000px",
-        xl: "1240px",
+        xl: "1260px",
       }
     },
     colors: {

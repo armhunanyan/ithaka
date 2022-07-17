@@ -20,7 +20,7 @@ const EventItem:React.FC<{event: IEvent}> = ({event}) => {
                     </div>
                     <div>
                         <p className="text-base md:text-lg font-medium mb-10">{event.title}</p>
-                        <p>{truncate(event.description, 80)}</p>
+                        <p>{truncate(event.content, 80)}</p>
                     </div>
                 </div>
             </a>

@@ -1,16 +1,14 @@
 import Section from '../section/Section';
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { InitialDataContext } from '../../contexts/initial-data/InitialDataContext';
-import { Navigation, Pagination} from 'swiper';
+import { Navigation } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
+import { IClient } from '../../interfaces/client';
+import axios from 'axios';
+import { clientsPath } from '../../lib/api';
 
-export interface IClientProps {
-    title: string;
-    image: string;
-}
-
-const Client:React.FC<IClientProps> = ({title, image}) => {
+const Client:React.FC<IClient> = ({title, image}) => {
     return (
         <div className="text-center">
             <div className='aspect-w-3 aspect-h-2 mb-20 '>
@@ -22,7 +20,16 @@ const Client:React.FC<IClientProps> = ({title, image}) => {
 }
 
 const Clients:React.FC = () => {
-    const {clients} = useContext(InitialDataContext)
+    const {clients, setClients} = useContext(InitialDataContext)
+    useEffect(() => {
+        if (!clients) {
+            axios.get(clientsPath)
+            .then(res => {
+                setClients(res.data);
+            })
+        }
+    }, [])
+    
     return (
         <Section className='clients-slider' title='Our Clients'>
             <Swiper
@@ -47,7 +54,8 @@ const Clients:React.FC = () => {
             {clients?.map((client, index) => {
                 return(
                 <SwiperSlide key={index}>
-                    <Client 
+                    <Client
+                        id={client.id}
                         title={client.title}
                         image={client.image}
                     />

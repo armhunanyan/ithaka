@@ -27,7 +27,7 @@ const Service:React.FC<IServiceProps> = ({service, orientation = 'vertical', isA
                         <p className="text-base md:text-lg font-bold">{service.title}</p>
                         {isActive && (
                             <>
-                                <p className="text-xs md:text-base mt-10">{service.description}</p>
+                                <p className="text-xs md:text-base mt-10">{service.content}</p>
                                 {service.hasSurvey && (
                                     <div className="mt-10 md:mt-20" onClick={(e) => e.stopPropagation()}>
                                         <Button className="w-full">
